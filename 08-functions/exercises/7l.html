@@ -1,0 +1,123 @@
+<!-- Modify 'updateCartQuantity' so that the quantity is invalid, alert();
+ and then return; (this is called an early return). An early return make our code cleaner because we can remove the 'else-if' / 'else'. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cart Quantity</title>
+</head>
+
+<body>
+  <button onclick="
+  updateCartQuantity();
+  ">
+    Show Quantity
+  </button>
+
+  <button onclick="
+   updateCartQuantity(+1);
+  ">Add to cart</button>
+
+  <button onclick="
+    updateCartQuantity(+2);
+  ">+2</button>
+
+  <button onclick="
+   updateCartQuantity(+3)
+  ">+3</button>
+
+
+  <button onclick="
+   updateCartQuantity(+4);
+  ">
+    +4
+  </button>
+
+
+  <button onclick="
+   updateCartQuantity(+5);
+  ">
+    +5
+  </button>
+
+
+  <button onclick="
+   updateCartQuantity(-1);
+  ">
+    Remove from cart
+  </button>
+
+  <button onclick="
+    updateCartQuantity(-2);
+  ">
+    -2
+  </button>
+
+  <button onclick="
+ updateCartQuantity(-3);
+">
+    -3
+  </button>
+
+  <button onclick="
+   updateCartQuantity(0);
+  ">
+    Reset Cart
+  </button>
+
+
+
+  <script>
+    let cartQuantity = 0;
+
+
+    function updateCartQuantity(button) {
+
+      if (button === +1) {
+        cartQuantity++;
+
+      } else if (button === +2) {
+        cartQuantity += 2;
+
+      } else if (button === +3) {
+        cartQuantity += 3;
+
+      } else if (button === +4) {
+        cartQuantity += 4;
+
+      } else if (button === +5) {
+        cartQuantity += 5;
+
+      } else if (button === -1) {
+        cartQuantity -= 1;
+
+      } else if (button === -2) {
+        cartQuantity -= 2;
+
+      } else if (button === -3) {
+        cartQuantity -= 3;
+
+      } else if (button === 0) {
+        cartQuantity = 0;
+
+      }
+
+
+      if (cartQuantity > 10) {
+        alert('cart is full');
+        return;
+      } else if (cartQuantity < 0) {
+        alert('not enough items');
+
+      } else {
+        console.log(`cart quantity : ${cartQuantity}`);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

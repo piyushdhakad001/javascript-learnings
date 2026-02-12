@@ -1,0 +1,1 @@
+//1e. Calculate 2 + 2 - 5 in the Console.(In Console)

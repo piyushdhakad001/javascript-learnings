@@ -1,0 +1,1 @@
+// 1d. Calculate 20 - 5 in the Console.(In Console)

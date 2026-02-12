@@ -1,0 +1,44 @@
+<!-- Create a score object { wins: 0, losses: 0 }, update the score each time after playing, and display the score in the console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>coin-flip Game</title>
+</head>
+<body>
+
+  <button onclick="
+    coinFlipGame('heads');
+    ">heads</button>
+
+  <button  onclick="
+      coinFlipGame('tails');
+    ">tails</button>
+  <script>
+    let score = {
+      wins: 0,
+      losses: 0
+    }
+
+    let guess = '';
+    let result = '';
+    function coinFlipGame(guess){
+      const randNum = Math.random();
+      let flipResult = (randNum >= 0.5) ? 'heads' : 'tails';
+      if(flipResult === guess){
+        result = 'you win';
+        score.wins++;
+      } else {
+        result = 'You lose';
+        score.losses++;
+      }
+
+      
+
+      console.log(`"${result}" \n wins: ${score.wins} and losses: ${score.losses}`);
+      
+    }
+    
+  </script>
+</body>
+</html>

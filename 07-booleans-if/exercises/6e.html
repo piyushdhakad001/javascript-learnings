@@ -1,0 +1,22 @@
+<!-- Continuing from exercise 6d, let's say the discount is only available if it is not a holiday. Create a variable: const isHoliday = true;
+ ~ Update the code so that in order to get a discount, people must meet the age requirementand it is also a holiday. 
+ ~Note: && has a higher priority than || so you may need to use bracket () to control which code gets done first.
+ ~ Try changing the value of isHoliday to display diffrent messages.-->
+
+  <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+    const age = 66;
+    const isHoliday = true;
+    if((isHoliday == false) && (age <= 6 || age >= 60)){
+      console.log('Discount')
+    } else{
+      console.log('Not Discount');
+    }
+  </script>
+ </body>
+ </html>

@@ -1,0 +1,61 @@
+<!-- CHALLENGE EXERCISES -->
+<!-- Setup: we'll improve the Cart Quantity project. First, make a copy of the project from exercise 5k (if you didn't do 5k, check the sollutions). -->
+
+<!-- 6K. Let's say the cart has a maximum quantity of 10. Before updating the quantity, check if the quantity will be greater than 10;
+ ~If it will, display a popup saying 'The cart is full' and don't update the quantity -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cart Quantity</title>
+</head>
+
+<body>
+
+  <button onclick="
+   console.log(`cart quantity : ${cartQuantity}`);
+  ">
+    Show Quantity
+  </button>
+
+  <button onclick="
+  if(cartQuantity >= 10){
+    alert('The cart is full');
+  } else {
+    cartQuantity++;
+    console.log(`cart quantity : ${cartQuantity}`);} 
+  ">Add to cart</button>
+
+  <button onclick="
+   if(cartQuantity >= 9){
+    alert('The cart is full');
+  } else {
+    cartQuantity += 2;
+    console.log(`car quantity : ${cartQuantity}`);}
+  ">+2</button>
+
+  <button onclick="
+   if(cartQuantity >= 8){
+    alert('The cart is full');
+  } else {
+    cartQuantity += 3;
+    console.log(`cart quantity : ${cartQuantity}`);}
+  ">+3</button>
+
+  <button onclick="
+    cartQuantity = 0;
+    console.log('cart was reset');
+    console.log(`cart quantity : ${cartQuantity}`);
+  ">
+    Reset Cart
+  </button>
+
+
+  <script>
+    let cartQuantity = 0;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!-- Let's say we're trying to guess the result. Create a variable called 'guess' and save your guess ('heads' or 'tails').
+ ~If your guess matches the result, display 'You win!' in the console
+ ~If your guess does not match the result, display 'you lose!' -->
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>coin-flip Game</title>
+</head>
+<body>
+  <script>
+    const randNum = Math.random();
+    let result;
+    const guess = 'heads';
+    if(randNum >= 0.5){
+      result = 'heads';
+    } else{
+      result = 'tails';
+    }
+    
+    if(result == guess){
+      console.log('you win!')
+    } else{
+      console.log('you lose!')
+    }
+      </script>
+</body>
+</html>

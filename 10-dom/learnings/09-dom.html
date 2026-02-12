@@ -1,0 +1,36 @@
+<!-- LESSON-9 : DOCUMENT OBJECT MODEL(DOM) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM</title>
+</head>
+<body>
+  <button>hello</button>
+  <button  class="js-button" >Second button</button>
+  
+  <script>
+
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button')
+     .innerHTML = 'Changed';
+
+
+     const buttonElement = document.querySelector('.js-button');
+     console.log(buttonElement)
+
+    // console.log(document.title);
+    // document.title = 'Changed';
+
+    // console.log(document.body);
+    // console.log(typeof document.body);
+
+    // console.log(document.body.innerHTML); 
+    // document.body.innerHTML = 'Changed';
+    // document.body.innerHTML = '<button>Changed</button>';
+
+    // document.body.innerHTML = 'hello';
+    // document.title = 'Good job!';
+  </script>
+</body>
+</html>

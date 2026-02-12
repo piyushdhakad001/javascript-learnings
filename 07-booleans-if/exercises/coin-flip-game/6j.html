@@ -1,0 +1,18 @@
+<!-- (Challenge) Instead of using if-statements in the previous exercises, try switching them into ternary operators (condition ? A : B). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>coin-flip Game</title>
+</head>
+<body>
+  <script>
+
+    const randNum = Math.random();
+    const guess = 'heads';
+    let result = (randNum >= 0.5) ? 'heads' : 'tails';
+    console.log((result == guess) ? 'You win!' : 'You lose!')
+    
+  </script>
+</body>
+</html>

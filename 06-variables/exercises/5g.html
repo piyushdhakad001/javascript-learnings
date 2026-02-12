@@ -1,0 +1,33 @@
+<!-- Continuing from 5f, calculate the total (cost + tax), save it in a variable calledd 'totalCost', and display the message 'Total cost:$${totalCost}' in the console -->
+
+
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let coffee = 5;
+      console.log(`1 coffee : $${coffee *= 1}`);
+
+       let bagels = 3;
+      console.log(`1 coffee : $${bagels *= 2}`);
+
+       let soup = 9;
+      console.log(`1 coffee : $${soup *= 1}`);
+
+      let cost = coffee + bagels + soup ;
+       
+      console.log(`cost : $${cost}`);
+      
+      let tax = cost * 0.10;
+      console.log(`Tax : $${tax}`)
+
+      let totalCost = cost + tax;
+      console.log(`totalCost : $${totalCost}`);
+      
+    </script>
+  </body>
+  </html>

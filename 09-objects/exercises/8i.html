@@ -1,0 +1,40 @@
+<!-- CHALLENGE EXERCISES
+ 8i. We'll improve the coin flip game from exercise 6j to be like the rock paper scissor game
+ ~ Copy the code from exercise 6j (see the sollution for 6j if needed).
+~ Create 2 buttons to play the game [heads] [tails] 
+~ When clicking 'heads' play the game with guess = 'heads'.
+~ When clicking 'tails' play the game with guess = 'tails'.
+~Create a function 'playGame(guess)' to reuse the code.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>coin-flip Game</title>
+</head>
+<body>
+
+  <button onclick="
+    coinFlipGame('heads');
+    ">heads</button>
+
+  <button  onclick="
+      coinFlipGame('tails');
+    ">tails</button>
+  <script>
+
+    let guess = '';
+    let result = '';
+    function coinFlipGame(guess){
+      const randNum = Math.random();
+      let flipResult = (randNum >= 0.5) ? 'heads' : 'tails';
+      if(flipResult === guess){
+        result = 'you win';
+      } else {
+        result = 'You lose';
+      }
+      console.log(result);
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Let's say the restaurant charges a 10% tax.. Using the 'cost' variable from 5c, calculate the tax (hint: multiply by 0.1) and save the result in a variable. -->
+
+
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let coffee = 5;
+      console.log(`1 coffee : $${coffee *= 1}`);
+
+       let bagels = 3;
+      console.log(`1 coffee : $${bagels *= 2}`);
+
+       let soup = 9;
+      console.log(`1 coffee : $${soup *= 1}`);
+
+      let cost = coffee + bagels + soup ;
+       
+      let tax = cost * 0.10;
+      console.log(`Tax : $${tax}`)
+
+      
+      console.log(`TotalCost : $${cost + tax}`);
+    </script>
+  </body>
+  </html>

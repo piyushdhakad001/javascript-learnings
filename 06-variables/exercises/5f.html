@@ -1,0 +1,30 @@
+<!-- Continuing from 5e, display 'Tax (10%): $${tax}' in the console. -->
+
+
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let coffee = 5;
+      console.log(`1 coffee : $${coffee *= 1}`);
+
+       let bagels = 3;
+      console.log(`1 coffee : $${bagels *= 2}`);
+
+       let soup = 9;
+      console.log(`1 coffee : $${soup *= 1}`);
+
+      let cost = coffee + bagels + soup ;
+       
+      let tax = cost * 0.10;
+      console.log(`Tax : $${tax}`)
+
+      
+      console.log(`cost : $${cost + tax}`);
+    </script>
+  </body>
+  </html>

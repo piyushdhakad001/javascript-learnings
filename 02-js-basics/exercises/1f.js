@@ -1,0 +1,1 @@
+// Use document.body.innerHTML = ...document; to display 'Good morning!' on the web page.(In Console)

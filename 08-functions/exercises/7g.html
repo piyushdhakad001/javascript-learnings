@@ -1,0 +1,31 @@
+<!--Create a function convertLength(length, from, to) that takes a number and a unit ('km' or 'miles') and converts the length to another unit('km' or 'miles'). Note : 1 mile = 1.6 km (approximately).
+~ convertLength(50, 'miles', 'km') => '80 km'
+~ convertLength(32, 'km', 'miles') => '20 miles'
+~ convertLength(50, 'km', 'km') => '50 km'
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+    function convertLength(length, from, to){
+      if(from === 'km' && to === 'km'){
+        finalLength = length + ' km';
+
+      } else if (from === 'miles' && to === 'km'){
+        finalLength = (length * 1.6) + ' km';
+
+      } else if (from === 'km' && to === 'miles'){
+        finalLength = (length / 1.6) + ' miles';
+      }
+      console.log(finalLength);
+    }
+     convertLength(50, 'miles', 'km');
+     convertLength(32, 'km', 'miles');
+     convertLength(50, 'km', 'km');
+  </script>
+ </body>
+ </html>
