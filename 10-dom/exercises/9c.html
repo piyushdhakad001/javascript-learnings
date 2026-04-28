@@ -1,0 +1,23 @@
+<!-- Create 2 buttons 'heads' and 'tails', and a paragraph (<p></p>) underneath. When clicking the 'heads' button, display 'You chose:heads' in the paragraph. when the 'tails' button, display 'You chose: tails'. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="
+    document.querySelector('.js-choice').innerHTML = 'You choose heads' ;
+    ">heads</button>
+  <button onclick="
+   document.querySelector('.js-choice').innerHTML = 'You choose tails' ;
+  
+  ">tails</button>
+  <p class="js-choice"></p>
+
+ 
+</body>
+
+</html>

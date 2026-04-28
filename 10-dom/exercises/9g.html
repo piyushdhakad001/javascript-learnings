@@ -1,0 +1,71 @@
+<!-- Challenge Exercises
+ Create a file 9g.html and copy the code from 09-dom-projects.html into this file. In the Amazon Shipping Calculator, enter a cost of 7.99 and click 'Calculate'. What issue do you see? Find a fix for this issue -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Project</title>
+</head>
+
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button onclick="
+     subscribe();
+   " class="js-subscribe-button">Subscribe</button>
+  <p>Rock Paper Scissors</p>
+  <a href="">Click here</a>
+
+  <p>Amazon Shipping Shopping Calculator</p>
+
+  <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+    handleCostKeydown(event);
+  ">
+
+  <button onclick="
+    calculateTotal();
+    ">Calculate</button>
+  <p class="js-total-cost"></p>
+
+
+  <a href="">CSS version of these projects</a>
+
+  <script>
+    function handleCostKeydown(event) {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+    function calculateTotal() {
+      let inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value) * 100;
+
+
+
+      if (cost > 4000) {
+        cost = cost;
+      } else {
+        cost = cost + 1000;
+      }
+
+      console.log(cost)
+      document.querySelector('.js-total-cost').innerHTML = `$${cost / 100}`;
+
+    }
+
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-button');
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>

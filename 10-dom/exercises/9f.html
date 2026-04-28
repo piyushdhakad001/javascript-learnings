@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <input class="js-username" type="text" placeholder="Name" onkeydown="
+    if(event.key === 'Enter'){
+       inPut();
+  }
+    ">
+  <button onclick="
+     inPut();
+  ">Submit</button>
+
+  <p class="js-name"></p>
+
+  <script>
+    function inPut() {
+      const text = document.querySelector('.js-username').value;
+      document.querySelector('.js-name').innerHTML = `Your name is: ${text}`;
+    }
+  </script>
+</body>
+</html>
