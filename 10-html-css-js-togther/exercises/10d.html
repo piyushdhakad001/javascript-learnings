@@ -1,0 +1,37 @@
+<!-- Create the button on the right. When clicking this button, it should turn ON / OFF. Hints: 
+ -> When clicking the button, add or remove the class 'is-toggled', and use it to change the styling.
+ -> Use if (classList.contains('is-toggled')) to decide whether to add or remove the 'is-toggled' class. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <title>Document</title>
+ </head>
+  <style>
+    .js-button{
+      background-color: black;
+      color: white;
+      padding: 8px 18px 8px 18px;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+    .is-toggled{
+      background-color: rgb(226, 226, 226);
+      color: black;
+     
+    }
+   
+  </style>
+ <body>
+  <button class="toggle-button js-button" onclick="
+    const button = document.querySelector('.js-button');
+    if(!button.classList.contains('is-toggled')){
+      button.classList.add('is-toggled');
+    } else {
+      button.classList.remove('is-toggled');
+    }
+    ">Gaming</button>
+  
+ </body>
+ </html>
