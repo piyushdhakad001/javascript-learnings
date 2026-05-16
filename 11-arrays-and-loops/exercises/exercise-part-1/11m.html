@@ -1,0 +1,42 @@
+<!-- Update exercise 11l to also handle these cases:
+ > minMax([]) => { min: null, max: null}
+ > minMax([3]) => { min: 3, max: 3} -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+    function minMax(nums){
+
+      const result = {
+        min: null,
+        max: null
+      }
+
+      for(let i = 0; i < nums.length; i++){
+       
+        // if( nums[i] = nums[0]){
+        //   result.min = nums[0],
+        //   result.max = nums[0]
+        // }
+        if(result.min === null || nums[i] < result.min){
+          result.min = nums[i];
+        } 
+        if(result.max === null || nums[i] > result.max){
+          result.max = nums[i];
+        }
+      }
+
+      return result;
+    }
+
+    console.log(minMax([]));
+    console.log(minMax([3]));
+   
+  </script>
+ </body>
+ </html>

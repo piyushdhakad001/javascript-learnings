@@ -1,0 +1,19 @@
+<!-- Imagine we're creating a messaginng app. Use setInterval() and document.title to create the feature on the right (the title changes every 1 second). -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <script>
+      setInterval(() => {
+        if (document.title === 'App') {
+          document.title = '(2) New messages';
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Create the button below. When clicking the button, after 1 second, the text inside the button changes to 'Finished!'.
+ (Hint: use setTimeout() and the DOM) -->
+
+ <!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button class="js-button" onclick="
+      updateButton();
+    ">Start</button>
+
+    <script>
+      // Grouping the JavaScript code into a function
+      // is optional, but it is a bit cleaner.
+      
+
+         document.querySelector('.js-button').addEventListener('click', () => {
+
+        const button = document.querySelector('.js-button');
+
+        
+
+        setTimeout(() => {
+          button.innerHTML = 'Finished!';
+        }, 1000);
+      })
+      
+    </script>
+  </body>
+</html>

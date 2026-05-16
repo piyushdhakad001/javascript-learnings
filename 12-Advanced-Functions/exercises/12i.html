@@ -1,0 +1,103 @@
+<!--  Continuing from 12h: 
+ -> Don't let 'messages' go below 0.
+ -> If messages === 0 stop changing the title and display 'App' as the title. 
+ -> When messages > 0 start changing the title again.
+  -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <button onclick="
+      messages++;
+    ">Add</button>
+
+    <button onclick="
+    if(messages > 0){
+      messages--;} 
+    ">Remove</button>
+
+    <script>
+      let messages = 2;
+       
+      setInterval(function() {
+        if ((document.title === 'App') && (messages > 0)) {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>App</title>
+</head>
+
+<body>
+
+  <button class="js-add-button" onclick="
+      
+      
+    ">Add</button>
+
+  <button class="js-remove-button">Remove</button>
+
+  <script>
+    let messages = 2;
+
+    let intervalId;
+
+    let isDisplayingNotification;
+
+
+
+
+    // Main functionality
+
+    if (!intervalId) {
+      intervalId = setInterval(() => {
+        if (document.title === 'App') {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+    }
+
+    document.querySelector('.js-add-button').addEventListener('click', () => {
+      messages++;
+
+
+
+
+    });
+
+
+
+    // only for stop when message === 0
+    document.querySelector('.js-remove-button').addEventListener('click', () => {
+      messages--;
+
+
+
+      if (messages <= 0) {
+
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
+
+    });
+
+
+  </script>
+</body>
+
+</html>

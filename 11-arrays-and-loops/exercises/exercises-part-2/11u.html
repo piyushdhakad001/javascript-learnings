@@ -1,0 +1,45 @@
+<!-- In exercise 11t, one problem with .reverse() is that it doesn't create a copy of the array it is reversing. It modifies the original array. (Hint: use the slice() method to create a copy of an array's values).
+ -> const foods = ['eggs', 'apple', 'egg', 'egg', 'ham'];
+ -> console.log(removeEgg(foods)) => [egg', 'apple' 'ham']
+ -> console.log(foodss) => ['egg', 'apple', 'egg', 'egg', 'ham']-->
+
+ <!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function removeEgg(foods) {
+        // To prevent modifying the original array, we
+        // can create a copy of the array using .slice()
+        const foodsCopy = foods.slice();
+        const reversedFoods = foodsCopy.reverse();
+
+        // Advanced technique:
+        // Since foods.slice() results in an array, we
+        // can also use .reverse() directly like this:
+        // foods.slice().reverse();
+        
+        // This technique is called "method chaining"
+        // because we use one method after another
+        // (like a chain of methods).
+        const result = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+
+          result.push(reversedFoods[i]);
+        }
+
+        return result.reverse();
+      }
+
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(removeEgg(foods));
+      console.log(foods);
+    </script>
+  </body>
+</html>
