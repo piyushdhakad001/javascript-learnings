@@ -43,4 +43,27 @@ We'll make "Update" interactive step-by-step.
 -> When clicking "Update" get the cart-item-container for the product, and add class "is-editing-quantity" to the container (use .classList)
 ->In checkout.css, style the the <input> & "Save" link and add display: none: (they will be invisible at the start)
 -> The CSS ".is-editing-quantity .quantity-input {...}" styles elements with class "quantity-input" inside an element with class="is-editing-quantity"
--> Use this, and "display: initial;" (resets the display property) to make the <input> appear when editing the quantity. Same for the "Save" link
+-> Use this, and "display: initial;" (resets the display property) to make the <input> appear when editing the quantity. Same for the "Save" link.
+
+
+14i). Using similar CSS selectors as 14h, make the quantity and "Update" link disappear when editing the quantity.
+
+
+14j). Now we'll implement switching between "Update" and "Save", do the opposite of "Update": get the cart-item-container for the product, and remove the class "is-editing-quantity". This should reverse all the styling that's applied when editing the quantity.
+
+
+14k). When clicking "Save", use the DOM to get the quantity <input> for the product, and get the value inside (remember to convert this value to a number). This will be the new quantity of the product in the cart.
+
+
+14l). In cart.js, create a function updateQuantity(productId, newQuantity) which will find a matching productId in the cart, and update its quantity to the new quantity (remember to save storage after).
+-> Then, import and use this function when clicking a "Save" link.
+
+
+14m). Now that we've updated the quantity in the cart, the last step is to update the quantity in the HTML. Update these 2 places:
+-> Inside the product              [quantity:2 Update Delete]
+-> In the header at the top        [Checkout (3 items)]
+
+
+14n). Try to come up with more features to add to the "Update" link like:
+-> Add validatiion (check the new quantity is >= 0 and < 1000)
+-> Add keyboard support (allow updating by pressing 'Enter')
