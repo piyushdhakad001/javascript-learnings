@@ -8,6 +8,6 @@ describe('test suit: formatCurrency', () => {
     expect(formatCurrency(0)).toEqual('0.00');
   })
   it('rounds up to the nearest', () =>{
-    expect(formatCurrency(2000.5)).toEqual('20.0')
+    expect(formatCurrency(2000.5)).toEqual('20.01')
   })
 })
