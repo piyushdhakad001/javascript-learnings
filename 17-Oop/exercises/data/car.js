@@ -1,4 +1,5 @@
-// 17a (SOLLUTION)
+// 17a (SOLUTION)
+/*
 class Car {
   brand;
   model;
@@ -20,3 +21,32 @@ const car2 = new Car({
 
 console.log(car1);
 console.log(car2);
+*/
+
+// 17b (SOLUTION)
+class Car {
+  brand;
+  model;
+
+  constructor(carDetails){
+    this.brand = carDetails.brand;
+    this.model = carDetails.model;
+  }
+  displayInfo(){
+    console.log(`${this.brand} ${this.model}`)
+
+  }
+}
+
+const car1 = new Car({
+  brand: 'Toyota',
+  model: 'Corolla'
+});
+const car2 = new Car({
+  brand: 'Tesla', 
+  model: 'Model 3'
+});
+
+car1.displayInfo();
+car2.displayInfo();
+
