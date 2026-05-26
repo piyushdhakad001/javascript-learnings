@@ -36,3 +36,7 @@
 `->` Race cars go faster than normal cars, so the `RaceCar` has an additional property `acceleration` instead of 5, and update the top speed to 300.
 `->` Race cars do not have a trunk. Update `openTrunk()` and `closeTrunk()`.
 `->`Create a race car `{ brand: 'McLaren', model: 'F1', acceleration: 20 }` and try the code.
+
+
+17f). Make `brand` and `model` properties private (just like in real life, we should not be able to change the brand and model of a car!)
+`->` Update `displayInfo()` with the private properties, and try the code.
