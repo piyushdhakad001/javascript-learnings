@@ -22,9 +22,17 @@
 `->` Call `go()` and `brake()` a few times for each car, call `displayInfo()` and check the console to confirm the code is working.
 
 
+
 17d). Add  `isTrunkOpen` property, which tracks if the car's trunk is open.
 `->` Should be a boolean property (`true` = open, `false` = closed).
 `->` Create `openTrunk()` and `closeTrunk()`, which opens / closes the trunk.
 `->` `openTrunk()` should not work if the car is moving.
 `->` `go()` should not work if the trunk is open.
 `->` Update `displayInfo()` to display trunk into at the end. Try the code.
+
+
+
+17e). Create a new `class RaceCar` which extends `Car`.
+`->` Race cars go faster than normal cars, so the `RaceCar` has an additional property `acceleration` instead of 5, and update the top speed to 300.
+`->` Race cars do not have a trunk. Update `openTrunk()` and `closeTrunk()`.
+`->`Create a race car `{ brand: 'McLaren', model: 'F1', acceleration: 20 }` and try the code.
