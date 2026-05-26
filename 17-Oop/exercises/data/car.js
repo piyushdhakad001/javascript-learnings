@@ -53,7 +53,7 @@ car2.displayInfo();
 */
 
 // 17c (SOLUTION)-----------------------------
-
+/*
 class Car {
   brand;
   model;
@@ -101,6 +101,72 @@ car2.break();
 car1.go();
 car1.go();
 car1.break();
+
+car1.displayInfo();
+car2.displayInfo();
+*/
+
+// 17d (SOLUTION)-------------------------------
+
+class Car {
+  brand;
+  model;
+  speed = 0;
+  isTrunkOpen = false;
+
+  constructor(carDetails) {
+    this.brand = carDetails.brand;
+    this.model = carDetails.model;
+  }
+
+  displayInfo() {
+    const trunkStatus = this.isTrunkOpen ? 'Open' : 'Closed';
+    console.log(`${this.brand} ${this.model}, Speed: ${this.speed} km/h , Trunk: ${trunkStatus} `);
+
+    // console.log(`isTrunkOpen: ${this.isTrunkOpen}`);
+  }
+
+  go() {
+    if (this.speed <= 200 || this.isTrunkOpen === true) {
+      this.speed += 5;
+    }
+  }
+
+  break() {
+    if (this.speed >= 5) {
+      this.speed -= 5;
+    }
+  }
+
+  openTrunk() {
+    if (this.speed <= 0) {
+      this.isTrunkOpen = true;
+    }
+  }
+
+  closeTrunk() {
+    this.isTrunkOpen = false;
+  }
+}
+
+const car1 = new Car({
+  brand: "Toyota",
+  model: "Corolla",
+});
+const car2 = new Car({
+  brand: "Tesla",
+  model: "Model 3",
+});
+
+car2.go();
+car2.break();
+car1.go();
+car1.break();
+
+car1.openTrunk();
+car2.openTrunk();
+// car1.closeTrunk();
+// car2.closeTrunk();
 
 car1.displayInfo();
 car2.displayInfo();

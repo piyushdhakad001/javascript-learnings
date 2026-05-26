@@ -20,3 +20,11 @@
 `->` Update `displayInfo()` to display the speed at the end:
      `${brand} ${model},  speed: ${speed} km/h`
 `->` Call `go()` and `brake()` a few times for each car, call `displayInfo()` and check the console to confirm the code is working.
+
+
+17d). Add  `isTrunkOpen` property, which tracks if the car's trunk is open.
+`->` Should be a boolean property (`true` = open, `false` = closed).
+`->` Create `openTrunk()` and `closeTrunk()`, which opens / closes the trunk.
+`->` `openTrunk()` should not work if the car is moving.
+`->` `go()` should not work if the trunk is open.
+`->` Update `displayInfo()` to display trunk into at the end. Try the code.
