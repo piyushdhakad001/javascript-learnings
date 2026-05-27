@@ -1,6 +1,6 @@
 // import { cart } from '../data/cart.js';
 import { products } from '../data/products.js';
-import { cart, addToCart, calculateCartQuantity } from '../data/cart.js';
+import { Cart, cart } from '../data/cart-class.js';
 import { formatCurrency } from './utils/money.js';
 
 let productsHTML = '';
@@ -68,7 +68,7 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 const addedMessageTimeouts = {};
 
 function updateCartQuantity() {
-  const cartQuantity = calculateCartQuantity();
+  const cartQuantity = cart.calculateCartQuantity();
 
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   
@@ -110,7 +110,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
 
 
 
-    addToCart(productId, quantity);
+    cart.addToCart(productId, quantity);
     updateCartQuantity();
      
 

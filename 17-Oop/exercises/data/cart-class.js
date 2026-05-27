@@ -1,4 +1,4 @@
-class Cart {
+export class Cart {
   // Shorthand if we have property =  undefine;
   cartItems;
   #localStorageKey;
@@ -10,7 +10,7 @@ class Cart {
 
   }
 
-  #loadFromStorage() { 
+#loadFromStorage() { 
     this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
     if (!this.cartItems) {
@@ -33,7 +33,7 @@ class Cart {
     localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
   }
 
-  addToCart(productId) {
+  addToCart(productId, quantity = 1) {
     let matchingItem;
 
     this.cartItems.forEach((item) => {
@@ -42,12 +42,12 @@ class Cart {
       }
     });
     if (matchingItem) {
-      matchingItem.quantity += 1;
+      matchingItem.quantity += quantity;
     } else {
       this.cartItems.push({
         // productId,
         productId: productId,
-        quantity: 1,
+        quantity: quantity,
         deliveryOptionId: "1",
       });
     }
@@ -81,41 +81,31 @@ class Cart {
 
     this.saveToStorage();
   }
+
+  calculateCartQuantity() {
+  let cartQuantity = 0;
+  this.cartItems.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  return cartQuantity;
+}
+
+ updateQuantity(productId, newQuantity) {
+  let matchingItem;
+  this.cartItems.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+  matchingItem.quantity = newQuantity;
+
+  this.saveToStorage();
+}
 }
 
 
 
 
-const cart = new Cart('cart-oop');
+export const cart = new Cart('cart-oop');
 const businessCart = new Cart('cart-business');
 
-
-
-
-// console.log(cart);
-// console.log(businessCart);
-// console.log(businessCart instanceof Cart);
-
-
-
-
-
-// export function calculateCartQuantity() {
-//   let cartQuantity = 0;
-//   cart.forEach((cartItem) => {
-//     cartQuantity += cartItem.quantity;
-//   });
-//   return cartQuantity;
-// }
-
-// export function updateQuantity(productId, newQuantity) {
-//   let matchingItem;
-//   cart.forEach((cartItem) => {
-//     if (productId === cartItem.productId) {
-//       matchingItem = cartItem;
-//     }
-//   });
-//   matchingItem.quantity = newQuantity;
-
-//   saveToStorage();
-// }

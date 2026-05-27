@@ -60,4 +60,21 @@ supersimple.dev/images/appliance-instructions.png
 `->` Convert the toaster into an `Appliance` class instead of a `Product` class.
 `->` When displaying extra info, display the instructions and the warranty. Follow the design on the right:
 `->` Find other products that are appliances (kettle, blender, etc.) and convert them to `Appliance` class.
-__AGAIN IN THE MORNING__
+
+
+
+17i). Create tests for the `product`, `Clothing`, and `Appliance` classes.
+`->` Create a new test file `data/productTest.js` and load it in `test.html`
+`->` Create a test suite for each class and create tests for each class.
+(Export the classes, generate objects using each class, and check if the properties and methods are correct).
+`->` When testing `extraInfoHTML` you can use `expect(...).to contain(...)` to check if the result contains a certain string.
+__Copied & Pasted (testing no need Now)__ 
+
+
+
+__Note:->__ you may want to create a copy of the project code for exercise 17j.
+
+17j). Replace all uses of the cart array with the cart class.
+`->` In `data/cart-class.js` export the `cart` object. Replace all uses of `import ... data/cart.js` with `import ... data/cart-class.js`
+`->` Update the code and the tests to make everything work again.
+*Hint*: in the tests, instead of mocking `localStorage.getItem` you can just deirectly set `cart.cartItems = [...]`

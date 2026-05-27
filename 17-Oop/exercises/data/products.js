@@ -11,7 +11,7 @@
         return matchingProduct;
  }
  
-class product {
+export class Product {
   id;
   image;
   name;
@@ -38,7 +38,7 @@ class product {
   }
  }
 
- const product1 = new product( {
+ const product1 = new Product( {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
     name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
@@ -56,7 +56,7 @@ class product {
 
    
 
- class Clothing extends product {
+ export class Clothing extends Product {
    sizeChartLink;
 
    constructor(productDetails){
@@ -71,7 +71,7 @@ class product {
    
  }
 
- class Appliance extends product {
+ export class Appliance extends Product {
   instructionsLink;
   warrantyLink;
 
@@ -84,7 +84,7 @@ class product {
   extraInfoHTML() {
     return `
     <a href="${this.instructionsLink}" target="_blank">Instructions</a>
-    <a href="${this.warrantyLink}" target="_blank">warrantyLink</a>
+    <a href="${this.warrantyLink}" target="_blank">WarrantyLink</a>
     `
   }
  }
@@ -819,5 +819,5 @@ class product {
   } else if(productDetails.type === 'appliance'){
     return new Appliance(productDetails);
   }
-   return new product(productDetails);
+   return new Product(productDetails);
 });

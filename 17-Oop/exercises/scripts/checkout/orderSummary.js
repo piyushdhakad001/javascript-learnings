@@ -1,10 +1,4 @@
-import {
-  cart,
-  removeFromCart,
-  calculateCartQuantity,
-  updateQuantity,
-  updateDeliveryOption,
-} from "../../data/cart.js";
+import { Cart , cart} from "../../data/cart-class.js";
 import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import { hello } from "https://unpkg.com/supersimpledev@1.0.1/hello.esm.js";
@@ -20,7 +14,7 @@ import { renderCheckoutHeader } from "./checkoutHeader.js";
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
 
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     const productId = cartItem.productId;
 
     let matchingProduct = getProduct(productId);
@@ -119,12 +113,12 @@ export function renderOrderSummary() {
 
   document.querySelector(".js-order-summary").innerHTML = cartSummaryHTML;
 
-  calculateCartQuantity();
+  cart.calculateCartQuantity();
 
   document.querySelectorAll(".js-delete-link").forEach((link) => {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
-      removeFromCart(productId);
+     cart.removeFromCart(productId);
 
       renderCheckoutHeader();
       renderOrderSummary();
@@ -164,7 +158,7 @@ export function renderOrderSummary() {
       return;
     }
 
-    updateQuantity(productId, newQuantity);
+    cart.updateQuantity(productId, newQuantity);
 
     // const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
     // quantityLabel.innerHTML = newQuantity;
@@ -198,7 +192,7 @@ export function renderOrderSummary() {
   document.querySelectorAll(".js-delivery-option").forEach((element) => {
     element.addEventListener("click", () => {
       const { productId, deliveryOptionId } = element.dataset;
-      updateDeliveryOption(productId, deliveryOptionId);
+      cart.updateDeliveryOption(productId, deliveryOptionId);
 
       // We can use this fun() to reload page after clicking radio button without making rendorOrderSummary(){without generating all html again and again}
       // location.reload();
