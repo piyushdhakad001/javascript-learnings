@@ -48,3 +48,16 @@
 `->` Therefore, we'll have to change `speed` back to public.
 `->` In other languages, a property can be `public, private,` or `protected` (`protected` = it can be accessed inside a class and its child classes).
 `->` Object-Oriented Programming is less popular in JavaScript because it is missing some features of OOP, like `protected` properties.
+
+
+__Challenge Exercises__
+
+17h). In the Amazon project, create a `class Appliance {}` 
+`->` An appliance is a specific type of product (it extends `Product`).
+`->` It has 2 extra properties: `instructionsLink` and `warrantyLink`.
+`->` In the products array, add `type`, `instructionsLink`, and `warrantyLink` to the toaster (4th product). If you need, download the images from: supersimple.dev/images/appliance-instructions.png 
+supersimple.dev/images/appliance-instructions.png
+`->` Convert the toaster into an `Appliance` class instead of a `Product` class.
+`->` When displaying extra info, display the instructions and the warranty. Follow the design on the right:
+`->` Find other products that are appliances (kettle, blender, etc.) and convert them to `Appliance` class.
+__AGAIN IN THE MORNING__
